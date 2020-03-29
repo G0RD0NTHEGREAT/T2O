@@ -1,8 +1,11 @@
+# Simple File Upload Example
+
+Example used in the blog post [How to Upload Files With Django](https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html)
 
 ## Running Locally
 
 ```bash
-git clone https://github.com/G0RD0NTHEGREAT/T2O.git
+git clone https://github.com/sibtc/simple-file-upload.git
 ```
 
 ```bash
@@ -16,4 +19,3 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-# T2O

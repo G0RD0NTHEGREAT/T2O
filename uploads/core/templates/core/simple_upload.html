@@ -5,41 +5,13 @@
 {% block content %}
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <p>Request
-    <input type="text" name="request"></p>
     <input type="file" name="myfile">
     <button type="submit">Upload</button>
   </form>
 
-
-
- {% if uploaded_file_url %}
-
- 	  <table border="1" style="table-layout: fixed;">
-      <tr>
-        <td halign="center" style="word-wrap: break-word;" valign="top">
-          <p>
-            <a href="{{ uploaded_file_url }}">
-              <img src="{{ uploaded_file_url }}" style="width:256px">
-            </a><br>
-            <p>Upload</p>
-          </p>
-        </td>
-        <td halign="center" style="word-wrap: break-word;" valign="top">
-          <p>
-            <a href="{{ uploaded_file_url }}">
-              <img src="{{ uploaded_file_url }}" style="width:256px">
-            </a><br>
-            <p>Output</p>
-          </p>
-        </td>
-      </tr>
-    </table>
-
-    <!-- <p>File uploaded <a href="{{ uploaded_file_url }}"><img src="{{ uploaded_file_url }}" style="width:256px"> </a></p>
-    <p>Result <a href="{{ uploaded_file_url }}"><img src="{{ uploaded_file_url }}" style="width:256px"> </a></p> -->
-    
- {% endif %}
+  {% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %}
 
   <p><a href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}

@@ -7,7 +7,6 @@
     <button type="submit">Upload</button>
   </form>
 
-
  {% if uploaded_file_url %}
 
  	  <table border="1" style="table-layout: fixed;">
@@ -35,7 +34,6 @@
     <p>Result <a href="{{ uploaded_file_url }}"><img src="{{ uploaded_file_url }}" style="width:256px"> </a></p> -->
     
  {% endif %}
-
 
   <p><a href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}
