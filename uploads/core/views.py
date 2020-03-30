@@ -4,6 +4,8 @@ from django.core.files.storage import FileSystemStorage
 
 from uploads.core.models import Document
 from uploads.core.forms import DocumentForm
+import os.path
+import time
 
 
 def home(request):
@@ -29,13 +31,21 @@ def model_form_upload(request):
             form.save()
             myfile = request.FILES['document']
             query = request.POST['request']
-            print(query)
+            # print(query)
+            # print(myfile.name)
+            
             fs = FileSystemStorage()
             filename = fs.save(myfile.name, myfile)
             uploaded_file_url = fs.url(filename)
+            # print(fs.url())
+            command = "sh run_remote.sh media/" +str(filename)+ " \"" +str(query)+ "\" media/" + "inference_"+str(filename)
+            print(command)
+            os.system(command)
+            output_file_url = fs.url("inference_"+str(filename))
+            # print(output_file_url)
             return render(request, 'core/model_form_upload.html', {
                 'uploaded_file_url': uploaded_file_url,
-                'output_file_url':uploaded_file_url
+                'output_file_url':output_file_url
             })
     else:
         form = DocumentForm()
