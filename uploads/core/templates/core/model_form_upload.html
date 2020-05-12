@@ -44,9 +44,9 @@
 </table>
 <p><a href="{% url 'model_form_upload' %}">Upload Another Image</a></p>
 
- {% endif %}
+ {% else %}
 
- {% if uploaded_file_url and show_sequenece is False %}
+ {% if uploaded_file_url  %}
 <p>The request is: <b>{{ query }}</b></p>
  	  <table border="1" style="table-layout: fixed;">
       <tr>
@@ -72,7 +72,7 @@
     <p><a href="{% url 'model_form_upload' %}">Upload Another Image</a></p>
     <!-- <p>File uploaded <a href="{{ uploaded_file_url }}"><img src="{{ uploaded_file_url }}" style="width:256px"> </a></p>
     <p>Result <a href="{{ uploaded_file_url }}"><img src="{{ uploaded_file_url }}" style="width:256px"> </a></p> -->
-    
+ {% endif %} 
  {% endif %}
   
 
