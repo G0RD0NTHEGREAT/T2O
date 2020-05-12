@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<p>This is webservice is built upon T2O net</p>
+
+
 <p>
   <a href="{% url 'model_form_upload' %}">Upload Image</a>
 </p>
 
 
-  <p>Uploaded files:</p>
+ <!--  <p>Uploaded files:</p>
   <ul>
     {% for obj in documents %}
       <li>
@@ -34,5 +38,5 @@
         </table>
       </li>
     {% endfor %}
-  </ul>
+  </ul> -->
 {% endblock %}
