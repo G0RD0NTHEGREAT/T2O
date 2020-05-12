@@ -62,7 +62,7 @@ def model_form_upload(request):
                  *******************************************   
                 '''
 
-                command = "sh run_remote_multi.sh media/" +str(filename)+ " \"" +str(query)+"\" media/"
+                command = "bash run_remote_multi.sh media/" +str(filename)+ " \"" +str(query)+"\" media/"
                 os.system(command)
                 print(command)
                 prefix = 1
@@ -101,7 +101,7 @@ def model_form_upload(request):
                 })
 
             # print(fs.exists("1_inference_2_in.jpg"))
-            command = "sh run_remote_single.sh media/" +str(filename)+ " \"" +str(query)+ "\" media/" + "inference_"+str(filename)
+            command = "bash run_remote_single.sh media/" +str(filename)+ " \"" +str(query)+ "\" media/" + "inference_"+str(filename)
             print(command)
             os.system(command)
             
