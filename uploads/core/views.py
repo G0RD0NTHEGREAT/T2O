@@ -48,9 +48,9 @@ def model_form_upload(request):
             fs = FileSystemStorage()
             filename = fs.save(myfile.name, myfile)
             uploaded_file_url = fs.url(filename)
- 
-            filename_base64 = subprocess.check_output("echo "+str(uploaded_file_url.split("/")[-1])+" | base64 ", shell=True);
-            filename_base64 = str(filename_base64[0:8])
+            
+            filename_base64 = subprocess.check_output("echo "+filename+" | base64 ", shell=True);
+            filename_base64 = filename_base64[0:8].decode()
             print("name_base64 is ", filename_base64 )
             
             # print(fs.url())
@@ -64,6 +64,7 @@ def model_form_upload(request):
 
                 command = "sh run_remote_multi.sh media/" +str(filename)+ " \"" +str(query)+"\" media/"
                 os.system(command)
+                print(command)
                 prefix = 1
                 while fs.exists(str(prefix)+"_inference_" + str(filename_base64) + ".jpg"):
                     prefix+=1
