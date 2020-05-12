@@ -49,7 +49,7 @@ def model_form_upload(request):
             filename = fs.save(myfile.name, myfile)
             uploaded_file_url = fs.url(filename)
  
-            filename_base64 = subprocess.check_output("echo "+str(filename)+" | base64 ", shell=True);
+            filename_base64 = subprocess.check_output("echo "+str(uploaded_file_url.split("/")[-1])+" | base64 ", shell=True);
             filename_base64 = str(filename_base64[0:8])
             print("name_base64 is ", filename_base64 )
             
