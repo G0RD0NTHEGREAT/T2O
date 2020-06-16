@@ -5,7 +5,9 @@
 ```bash
 git clone https://github.com/G0RD0NTHEGREAT/T2O.git
 ```
-
+```
+git checkout localserver
+```
 ```bash
 pip install -r requirements.txt
 ```
@@ -21,7 +23,7 @@ python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
 ```
 
-## Modification
+### Modification
 
 Change the content of `run_remote_single.sh` and `run_remote_multi.sh` 
 
@@ -29,3 +31,5 @@ Change the content of `run_remote_single.sh` and `run_remote_multi.sh`
 - `demooutdir`: change the directory to your own repodirectory
 - `bash /u/jshi31/project/T2ONet/demo/run_demo_FiveK.sh` change to your own repo directory
 
+## Running Remotely
+Follow the previous step, but do not checkout to localserver.
