@@ -1,5 +1,5 @@
 # Our model T2Onet is accepted to CVPR 2021 !!! 
-check out our paper at https://www.cs.rochester.edu/~cxu22/p/cvpr2021_langimgplan_paper.pdf
+check out our paper at https://www.cs.rochester.edu/~cxu22/p/cvpr2021_langimgplan_paper.pdf  
 CVPR publication will be availble in June 2021 on CVF.
 
 # T2ONet 
